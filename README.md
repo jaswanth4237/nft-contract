@@ -1,73 +1,51 @@
-📘 NFTCollection – ERC-721 NFT Smart Contract
-
+**📘 NFTCollection – ERC-721 NFT Smart Contract**
 This project implements a fully functional ERC-721 (NFT) smart contract with minting, burning, pausing, metadata support, ownership control, and a full automated test suite.
 The entire environment is containerized using Docker, ensuring consistent builds and test execution across systems.
-
 This project was developed using Hardhat, Solidity 0.8.20, and OpenZeppelin Contracts 4.9.3.
 
-🚀 Features
+**🚀 Features**
 🔹 ERC-721 Standard
-
 Implements the full ERC-721 interface with safe transfers, approvals, and ownership tracking.
 
 🔹 Owner-Only Minting
-
 Only the contract deployer (owner) can mint new NFTs.
 
 🔹 Max Supply Restriction
-
 The contract enforces a fixed maximum number of NFTs.
 
 🔹 Burn Function
-
 Token owners or approved addresses can burn NFTs, reducing total supply.
 
 🔹 Pause & Unpause
-
 The contract owner can pause:
-
 Minting
-
 Transfers
-
 Burning
 
 This adds security during upgrades or emergencies.
 
 🔹 Metadata Support
-
 Uses a base URI + tokenId pattern to generate metadata endpoints.
-
 Example:
 ```bash
 https://example.com/metadata/1
 ```
 
 🔹 Extensive Automated Tests
-
 Covers:
-
 Minting behavior
-
 Transfers
-
 Approvals
-
 Burn logic
-
 Pausing logic
-
 Metadata
-
 Failure scenarios
-
 Event emission
 
 🔹 Dockerized Testing Environment
-
 A Dockerfile is included to run tests in a clean, reproducible environment.
 
-📁 Project Structure
+**📁 Project Structure**
 nft-contract/
 ├── contracts/
 │   └── NFTCollection.sol
@@ -80,7 +58,7 @@ nft-contract/
 ├── Dockerfile
 └── README.md
 
-🔧 Tech Stack
+**🔧 Tech Stack**
 Component	Version
 Solidity	0.8.20
 Hardhat	2.26.0
@@ -90,14 +68,14 @@ Docker	Latest
 
 ---
 
-🛠️ Installation & Setup
+**🛠️ Installation & Setup**
 
-1️⃣ Install Dependencies
+**1️⃣ Install Dependencies**
 ```bash
 npm install
 ```
 
-🧪 Running Tests Locally
+**🧪 Running Tests Locally**
 
 To run tests using Hardhat:
 ```bash
@@ -105,52 +83,38 @@ npx hardhat test
 ```
 
 Expected output:
-
 11 passing
 
-🐳 Running Tests in Docker (Reproducible Environment)
-✔ 1. Build the Docker image
+**🐳 Running Tests in Docker**
+**✔ 1. Build the Docker image**
 ```bash
 ```
 docker build -t nft-contract .
 
-✔ 2. Run tests inside the container
+**✔ 2. Run tests inside the container**
 ```bash
 docker run --rm nft-contract
 ```
 
 
 This ensures:
-
 No dependency issues
-
 No missing compiler downloads
-
 Fully reproducible results
-
 Expected output:
-
 11 passing
 
-📜 Smart Contract Overview
+**📜 Smart Contract Overview**
 NFTCollection.sol
 
 Implements:
-
 mint(address)
-
 burn(uint256)
-
 pause(), unpause()
-
 _beforeTokenTransfer() override
-
 _baseURI() override
-
 Supply tracking (totalSupply, maxSupply)
-
 _isApprovedOrOwner() validation
-
 Event emission (Transfer, Approval)
 
 Constructor Parameters:
@@ -163,7 +127,7 @@ constructor(
 )
 ```
 
-🧪 Test Suite Overview
+**🧪 Test Suite Overview**
 Tests include:
 
 ✔ Initialization
@@ -178,21 +142,16 @@ Tests include:
 
 All tests pass successfully.
 
-🐳 Dockerfile Explanation
+**🐳 Dockerfile Explanation**
 
 The Dockerfile:
-
 Uses Node 18 Alpine (lightweight)
-
 Installs project dependencies
-
 Pre-downloads Solidity compiler
-
 Runs tests automatically when container starts
-
 This ensures tests run offline without needing network access.
 
-🎯 How to Use in CI / Submission
+**🎯 How to Use in CI / Submission**
 ```bash
 
 docker build -t nft-contract .
@@ -200,8 +159,7 @@ docker run --rm nft-contract
 ```
 
 
-🏁 Conclusion
-
+**🏁 Conclusion**
 The project fulfills all major requirements:
 
 ✔ ERC-721 compliant NFT smart contract
