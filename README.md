@@ -79,8 +79,8 @@ Expected output:
 
 **✔ 1. Build the Docker image**
 ```bash
-```
 docker build -t nft-contract .
+```
 
 **✔ 2. Run tests inside the container**
 ```bash
